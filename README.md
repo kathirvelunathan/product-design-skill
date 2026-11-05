@@ -68,12 +68,12 @@ The framework follows a 4-stage pipeline that lowers high-level business vision 
 flowchart TD
     subgraph Stage1["Stage 1: Strategic Planning"]
         A["3-Year Vision"] -->|"@strategic-horizons-roadmapper"| B["docs/roadmap/ROADMAP.md"]
-        B -->|"@business-hypothesis-definer"| C["docs/initiatives/INIT-*.md"]
         B -->|"@executive-presenter-transformer"| D["Marp Board Presentation Deck"]
     end
 
     subgraph Stage2["Stage 2: Epic Definition"]
         B -->|"@psb-bundle-scaffolder"| E["Scaffold Epic PSB Folder"]
+        E -->|"@business-hypothesis-definer"| C["00-strategy.md"]
         E -->|"@epic-business-decomposer"| F["01-capability.md"]
         E -->|"@conceptual-model-shaper"| G["02-conceptual.md"]
         E -->|"@governance-approvals-shaper"| H["04-governance.md"]
@@ -87,7 +87,8 @@ flowchart TD
     end
 
     subgraph Stage4["Stage 4: Automated Verification & Execution"]
-        F --> M["@spec-linter-evaluator / CI Pipeline"]
+        C --> M["@spec-linter-evaluator / CI Pipeline"]
+        F --> M
         G --> M
         H --> M
         J --> M

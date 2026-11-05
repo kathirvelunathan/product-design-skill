@@ -26,7 +26,7 @@ last_updated: "YYYY-MM-DD"
 
 ---
 
-# 3. Success Metrics & Value Realization
+# 3. Success Metrics & Value Realization (Leading & Lagging KPIs)
 
 | Metric Type | Metric Name | Baseline (Current) | Target (90 Days Post-Cutover) | Measurement Source |
 | :--- | :--- | :--- | :--- | :--- |
@@ -36,11 +36,13 @@ last_updated: "YYYY-MM-DD"
 
 ---
 
-# 4. Strategic Assumptions & The "Kill / Pivot" Gate
+# 4. Four-Risk Profile & The "Kill / Pivot" Gate
 
-### Core Assumptions
-1. **Value Assumption:** [Why will users/stakeholders adopt this workflow rather than continuing workarounds?]
-2. **Feasibility Assumption:** [Assumption about source data availability, completeness, or stability.]
+### Four-Risk Assessment
+- **Value Risk:** [Why will internal stakeholders or clients adopt this workflow rather than continuing workarounds?]
+- **Viability Risk (Regulatory / Compliance):** [FCA, PRA, GDPR, or data residency considerations.]
+- **Feasibility Risk:** [Assumptions about source data availability, completeness, or legacy platform throughput.]
+- **Usability / Operational Risk:** [Can operations teams handle the workflow shift and exception queues?]
 
 ### The Kill / Pivot Condition
 > **Exit Criteria:** If [metric condition, e.g., automated match accuracy falls below 80%] after [time frame, e.g., 30 days of dark-launch testing], the initiative will be halted and reviewed for pivot rather than promoting to production.

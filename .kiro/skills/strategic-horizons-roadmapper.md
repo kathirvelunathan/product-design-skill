@@ -29,7 +29,7 @@ You operate strictly within the **Three Horizons Model**:
 3. **Draft the Artifact:** Generate the complete `docs/roadmap/ROADMAP.md` using the template below.
 
 # Output Template (`docs/roadmap/ROADMAP.md`)
-```markdown
+````markdown
 ---
 title: "Product Portfolio Roadmap (3-Year Strategic View)"
 product_area: "[Product Area Name]"
@@ -66,3 +66,5 @@ gantt
     [H1 Foundational Enabler] (H1)    :done,    h1_2, 2026-11, 2027-03
     [H2 Platform Expansion] (H2)      :         h2_2, 2027-04, 2028-04
     [H3 Transformative Bet] (H3)      :         h3_2, 2028-05, 2029-10
+```
+````
