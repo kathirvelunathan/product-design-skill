@@ -66,31 +66,36 @@ The framework follows a 4-stage pipeline that lowers high-level business vision 
 
 ```mermaid
 flowchart TD
-    subgraph Stage 1: Strategic Planning
-        A[3-Year Vision] -->|@strategic-horizons-roadmapper| B(docs/roadmap/ROADMAP.md)
-        B -->|@business-hypothesis-definer| C(docs/initiatives/INIT-*.md)
-        B -->|@executive-presenter-transformer| D(Marp Board Presentation Deck)
+    subgraph Stage1["Stage 1: Strategic Planning"]
+        A["3-Year Vision"] -->|"@strategic-horizons-roadmapper"| B["docs/roadmap/ROADMAP.md"]
+        B -->|"@business-hypothesis-definer"| C["docs/initiatives/INIT-*.md"]
+        B -->|"@executive-presenter-transformer"| D["Marp Board Presentation Deck"]
     end
 
-    subgraph Stage 2: Epic Definition
-        B -->|@psb-bundle-scaffolder| E[Scaffold Epic PSB Folder]
-        E -->|@epic-business-decomposer| F(01-capability.md)
-        E -->|@conceptual-model-shaper| G(02-conceptual.md)
-        E -->|@governance-approvals-shaper| H(04-governance.md)
+    subgraph Stage2["Stage 2: Epic Definition"]
+        B -->|"@psb-bundle-scaffolder"| E["Scaffold Epic PSB Folder"]
+        E -->|"@epic-business-decomposer"| F["01-capability.md"]
+        E -->|"@conceptual-model-shaper"| G["02-conceptual.md"]
+        E -->|"@governance-approvals-shaper"| H["04-governance.md"]
     end
 
-    subgraph Stage 3: Feature Refinement
-        E -->|@feature-scaffolder| I[Scaffold Feature Folders]
-        I -->|State & Transition Design| J(02-statechart.md)
-        I -->|@product-design-lens-shaper| K(03-lenses.md)
-        I -->|@spec-by-example-contract-builder| L(05-contracts.md)
+    subgraph Stage3["Stage 3: Feature Refinement"]
+        E -->|"@feature-scaffolder"| I["Scaffold Feature Folders"]
+        I -->|"State & Transition Design"| J["02-statechart.md"]
+        I -->|"@product-design-lens-shaper"| K["03-lenses.md"]
+        I -->|"@spec-by-example-contract-builder"| L["05-contracts.md"]
     end
 
-    subgraph Stage 4: Automated Verification & Execution
-        F & G & H & J & K & L --> M[@spec-linter-evaluator / CI Pipeline]
-        M -->|Pass Definition of Ready| N[GitLab MR Approval / Sync to Jira]
-        N --> O[Claude High-Level Design Agent]
-        O --> P[Kiro TDD Code Generation Factory]
+    subgraph Stage4["Stage 4: Automated Verification & Execution"]
+        F --> M["@spec-linter-evaluator / CI Pipeline"]
+        G --> M
+        H --> M
+        J --> M
+        K --> M
+        L --> M
+        M -->|"Pass Definition of Ready"| N["GitLab MR Approval / Sync to Jira"]
+        N --> O["Claude High-Level Design Agent"]
+        O --> P["Kiro TDD Code Generation Factory"]
     end
 ```
 
